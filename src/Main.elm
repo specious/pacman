@@ -48,7 +48,7 @@ font =
 logo w h =
     El.container w (h + 20) El.middle
         <| El.flow El.down
-            [ El.image w h "/graphics/pacman-logo.jpg", El.spacer w 20 ]
+            [ El.image w h "graphics/pacman-logo.jpg", El.spacer w 20 ]
 
 
 displayBox : Box -> Int -> El.Element
@@ -283,10 +283,10 @@ view ( w, h ) st =
         gState =
             case st.gameState of
                 Loading ->
-                    El.fittedImage (6 * bSide) bSide "/graphics/loading.png"
+                    El.fittedImage (6 * bSide) bSide "graphics/loading.png"
 
                 Over ->
-                    El.fittedImage (8 * bSide) bSide "/graphics/over.png"
+                    El.fittedImage (8 * bSide) bSide "graphics/over.png"
 
                 _ ->
                     El.empty
@@ -687,7 +687,7 @@ deathHandleAudio st =
 deathBuilder : Signal ( Aud.Event, Aud.Properties )
 deathBuilder =
     Aud.audio
-        { src = "/sounds/PacManDies.wav"
+        { src = "sounds/PacManDies.wav"
         , triggers = { defaultTriggers | timeupdate = True }
         , propertiesHandler = deathPropertiesHandler
         , actions = Signal.map deathHandleAudio currState
@@ -713,7 +713,7 @@ introHandleAudio st =
 introBuilder : Signal ( Aud.Event, Aud.Properties )
 introBuilder =
     Aud.audio
-        { src = "/sounds/pacman_beginning.wav"
+        { src = "sounds/pacman_beginning.wav"
         , triggers = { defaultTriggers | timeupdate = True }
         , propertiesHandler = introPropertiesHandler
         , actions = Signal.map introHandleAudio currState
@@ -739,7 +739,7 @@ ghostHandleAudio st =
 ghostBuilder : Signal ( Aud.Event, Aud.Properties )
 ghostBuilder =
     Aud.audio
-        { src = "/sounds/pacman_eatghost.wav"
+        { src = "sounds/pacman_eatghost.wav"
         , triggers = { defaultTriggers | timeupdate = True }
         , propertiesHandler = ghostPropertiesHandler
         , actions = Signal.map ghostHandleAudio currState
@@ -765,7 +765,7 @@ pellHandleAudio st =
 pellBuilder : Signal ( Aud.Event, Aud.Properties )
 pellBuilder =
     Aud.audio
-        { src = "/sounds/pacman_chomp.wav"
+        { src = "sounds/pacman_chomp.wav"
         , triggers = { defaultTriggers | timeupdate = True }
         , propertiesHandler = pellPropertiesHandler
         , actions = Signal.map pellHandleAudio currState
