@@ -45,7 +45,7 @@ font =
     [ "Andale Mono", "monospace" ]
 
 
-title w h =
+logo w h =
     El.container w (h + 20) El.middle
         <| El.flow El.down
             [ El.image w h "/graphics/pacman-logo.jpg", El.spacer w 20 ]
@@ -258,14 +258,14 @@ view ( w, h ) st =
         bSide =
             (h - magicNumber) // 36
 
-        titleHeight =
+        logoHeight =
             30
 
-        titleWidth =
+        logoWidth =
             bSide * 23
 
         ttl =
-            title titleWidth titleHeight
+            logo logoWidth logoHeight
 
         score =
             "SCORE: "
@@ -278,7 +278,7 @@ view ( w, h ) st =
             El.flow El.right [ score, (displayLives st.extraLives magicNumber ravi) ]
 
         gState_pos =
-            Utl.itow (bSide * numCols) (titleHeight + 20 + (bSide * numRows)) ( 13.5, 17 )
+            Utl.itow (bSide * numCols) (logoHeight + 20 + (bSide * numRows)) ( 13.5, 17 )
 
         gState =
             case st.gameState of
@@ -301,7 +301,7 @@ view ( w, h ) st =
             bSide * numCols
 
         hFromBxs =
-            titleHeight + 20 + (bSide * numRows)
+            logoHeight + 20 + (bSide * numRows)
 
         pinky_pos =
             Utl.itow wFromBxs hFromBxs st.pinky.pos
@@ -771,6 +771,9 @@ pellBuilder =
         , actions = Signal.map pellHandleAudio currState
         }
 
+
+port title : String
+port title = "Pacman"
 
 main : Signal El.Element
 main =
