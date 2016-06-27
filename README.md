@@ -4,9 +4,17 @@ The game of Pacman implemented in [Elm](http://elm-lang.org/) using Functional R
 
 ![Screenshot](screenshot.png)
 
-## Usage
+## Requirements
 
-1. Install [Elm](http://elm-lang.org/install)
-2. Clone this repository and `cd` into it
-3. Run `elm-reactor`
-4. Visit <http://localhost:8000/Display.elm>
+Requires [Elm](http://elm-lang.org/) 0.16 to build.  You can use [elmenv](https://github.com/sonnym/elmenv) to install multiple versions of Elm concurrently.
+
+## Play it!
+
+1. Run `elm-reactor`
+2. Visit <http://localhost:8000/src/Display.elm>
+
+## Build
+
+```
+elm-make src/Display.elm --output index.html
+```
