@@ -1,4 +1,4 @@
-module Display (..) where
+module Main (..) where
 
 import Pacman exposing (..)
 import Controls as Ctr

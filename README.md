@@ -11,10 +11,10 @@ Requires [Elm](http://elm-lang.org/) 0.16 to build.  You can use [elmenv](https:
 ## Play it!
 
 1. Run `elm-reactor`
-2. Visit <http://localhost:8000/src/Display.elm>
+2. Visit <http://localhost:8000/src/Main.elm>
 
 ## Build
 
 ```
-elm-make src/Display.elm --output index.html
+elm-make src/Main.elm --output index.html
 ```
